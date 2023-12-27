@@ -1,11 +1,11 @@
 import pydantic
+from flask.views import MethodView
 from flask_bcrypt import Bcrypt
+from models import Session, User
+from schema import CreateUser, UpdateUser
 from sqlalchemy.exc import IntegrityError
 
 from flask import Flask, jsonify, request
-from flask.views import MethodView
-from models import Session, User
-from schema import CreateUser, UpdateUser
 
 app = Flask("app")
 # используем библиотеку для хеширования паролей
