@@ -1,5 +1,6 @@
-from app import app
 from views import AdvertisementView, LoginView, UserView
+
+from app import app
 
 user_view = UserView.as_view("user")
 advertisements_view = AdvertisementView.as_view("advertisements")

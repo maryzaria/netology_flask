@@ -4,7 +4,6 @@ from typing import Optional
 
 import pydantic
 from flask import request
-
 from models import User
 
 
@@ -80,14 +79,6 @@ class AbstractAdv(pydantic.BaseModel, ABC):
 class CreateAdvertisement(AbstractAdv):
     title: str
     description: str
-    owner: str
-
-    @pydantic.field_validator("owner")
-    @classmethod
-    def check_owner(cls, value: str):
-        if len(value) > 50:
-            raise ValueError("Owner's name must be less than 50 chars")
-        return value
 
 
 class UpdateAdvertisement(AbstractAdv):

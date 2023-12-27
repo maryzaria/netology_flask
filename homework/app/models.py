@@ -95,7 +95,7 @@ class Advertisement(Base):
         }
 
 
-MODEL_TYPE = Type[User | Advertisement]
-MODEL = User | Advertisement
+MODEL_TYPE = Type[User | Advertisement | Token]
+MODEL = User | Advertisement | Token
 
 Base.metadata.create_all(bind=engine)

@@ -1,11 +1,11 @@
 import functools
 
-from app import app
 from errors import HttpError
+from flask import request
 from flask_bcrypt import Bcrypt
 from models import MODEL, Token
 
-from flask import request
+from app import app
 
 bcrypt = Bcrypt(app)
 

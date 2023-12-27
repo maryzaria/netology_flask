@@ -1,11 +1,11 @@
 import psycopg2
 import pydantic
-from app import app
 from errors import HttpError
+from flask import jsonify, request
 from models import MODEL, MODEL_TYPE
 from sqlalchemy.exc import IntegrityError
 
-from flask import jsonify, request
+from app import app
 
 
 @app.errorhandler(HttpError)
